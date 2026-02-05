@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunksoccer_coaching_website=globalThis.webpackChunksoccer_coaching_website||[]).push([[1235],{8552(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);
