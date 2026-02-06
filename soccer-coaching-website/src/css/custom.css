@@ -1,88 +1,156 @@
-/* --- Modern Sports Brand Theme --- */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #1b5e20;
-  --ifm-color-primary-dark: #154a19;
-  --ifm-color-primary-darker: #134617;
-  --ifm-color-primary-darkest: #103a13;
-  --ifm-color-primary-light: #2e7d32;
-  --ifm-color-primary-lighter: #388e3c;
-  --ifm-color-primary-lightest: #4caf50;
+  --ifm-color-primary: #1b5e20; /* Pitch Green */
+  --ifm-color-primary-dark: #0a2e10; /* Darker shade for gradients/accents */
+  --ifm-color-primary-darker: #07220c; /* Even darker */
+  --ifm-color-primary-darkest: #051909; /* Darkest */
+  --ifm-color-primary-light: #33925d; /* Lighter green */
+  --ifm-color-primary-lighter: #47b77b; /* Lighter still */
+  --ifm-color-primary-lightest: #6fdf9e; /* Lightest green */
 
-  /* Layout Polish */
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #0f172a;
-  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --ifm-h1-font-weight: 800;
-  --ifm-h2-font-weight: 700;
+  /* Sports Tech Theme: Midnight Navy for Secondary/Dark */
+  --ifm-color-secondary: #0f172a; /* Midnight Navy */
+  --ifm-color-secondary-dark: #0a101e; /* Darker Midnight Navy */
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(27, 94, 32, 0.3); /* Semi-transparent deep green */
 }
 
+/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-navbar-background-color: #0f172a;
-  --ifm-background-color: #0b0f1a;
+  --ifm-background-color: var(--ifm-color-secondary); /* Use Midnight Navy for dark background */
+  --ifm-navbar-background-color: var(--ifm-color-secondary-dark); /* Darker nav */
+  --ifm-footer-background-color: var(--ifm-color-secondary-dark); /* Dark footer */
+  --ifm-font-color: #e0e0e0; /* Light text for dark mode */
+  --ifm-heading-color: #ffffff; /* White headings */
+  /* Ensure primary colors are still visible or adjust as needed */
+  --ifm-color-primary: #1b5e20; 
+  --ifm-color-primary-dark: #0a2e10;
 }
 
-/* Hero Section: Bold & Professional */
-.hero--primary {
-  background: linear-gradient(135deg, #1b5e20 0%, #0a2e10 100%) !important;
-  padding: 8rem 2rem !important;
-  color: white;
+/* Hero Section Styling */
+.hero {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: var(--ifm-color-white);
+  padding: 4rem 0; /* Increased vertical padding */
   text-align: center;
+  width: 100%; 
 }
 
 .hero__title {
-  font-size: 4rem;
-  letter-spacing: -2px;
-  text-transform: uppercase;
+  font-size: 3rem; /* Default size, will be overridden by display */
+  margin-bottom: 1rem;
+}
+
+.hero__title--display {
+  font-size: 4.5rem; /* Larger display font size */
+  line-height: 1.2;
 }
 
 .hero__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem; 
   font-weight: 300;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto 2rem;
   opacity: 0.9;
 }
 
-/* Buttons: Mobile App Style */
-.button--primary {
-  border-radius: 50px;
-  padding: 0.8rem 2.5rem;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+/* Card style for feature sections and library cards */
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex-grow: 1;
+  background-color: white;
+  border: 1px solid #e0e0e0; /* Lighter border for white cards */
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure card content takes full height */
+}
+
+.card-content:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.card__title {
+  font-size: 1.5rem; 
+  font-weight: 700;
+  color: var(--ifm-color-primary); /* Use Pitch Green for card titles */
+  margin-bottom: 1rem;
+}
+
+.card__body p {
+  font-size: 1rem;
+  color: var(--ifm-font-color);
+  line-height: 1.65; 
+}
+
+.card__button {
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  color: white !important;
+  border-radius: 8px !important; /* Rounded corners for buttons */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 0.8rem 1.5rem !important;
 }
 
-.button--primary:hover {
+.card__button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--ifm-color-primary-dark) !important;
+  border-color: var(--ifm-color-primary-dark) !important;
 }
 
-/* Feature Cards */
-.container .row .col {
-  padding: 2rem;
+/* Responsive grid for library page */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+  gap: 1.5rem;
 }
 
-.features_src-components-HomepageFeatures-modules__feature_... (Note to Openclaw: apply to feature cards) {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+@media (min-width: 768px) { /* Tablet breakpoint */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
 }
 
-[data-theme='dark'] .features_card {
-  background: #1e293b;
+@media (min-width: 992px) { /* Desktop breakpoint */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktops */
+  }
 }
 
-/* Sidebar & Navigation Cleanup */
-.menu__link--active {
-  background-color: rgba(27, 94, 32, 0.1) !important;
-  border-left: 4px solid var(--ifm-color-primary);
+/* Ensure these also use the new palette if they exist and are relevant */
+.pitch-green-text {
+  color: var(--ifm-color-primary);
 }
 
-.navbar {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-weight: 600;
+.pitch-green-bg {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.dark-theme-bg {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color);
 }
