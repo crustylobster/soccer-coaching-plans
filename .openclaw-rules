@@ -1,0 +1,5 @@
+# Repository Rules
+- The root `.github` folder is strictly OFF-LIMITS.
+- The `docusaurus.config.js` file is the 'Source of Truth' for deployment; do not overwrite the header configuration.
+- Always perform Docusaurus work inside the `soccer-coaching-website/` directory.
+- If you need to change a dependency, ask for permission before running `npm install`.

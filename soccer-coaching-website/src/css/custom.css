@@ -6,25 +6,68 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #1b5e20; /* Pitch Green */
+  --ifm-color-primary-dark: #0a2e10; /* Darker shade for gradients/accents */
+  --ifm-color-primary-darker: #07220c; /* Even darker */
+  --ifm-color-primary-darkest: #051909; /* Darkest */
+  --ifm-color-primary-light: #33925d; /* Lighter green */
+  --ifm-color-primary-lighter: #47b77b; /* Lighter still */
+  --ifm-color-primary-lightest: #6fdf9e; /* Lightest green */
+
+  /* Sports Tech Theme: Midnight Navy for Secondary/Dark */
+  --ifm-color-secondary: #0f172a; /* Midnight Navy */
+  --ifm-color-secondary-dark: #0a101e; /* Darker Midnight Navy */
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(27, 94, 32, 0.3); /* Semi-transparent deep green */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: var(--ifm-color-secondary); /* Use Midnight Navy for dark background */
+  --ifm-navbar-background-color: var(--ifm-color-secondary-dark); /* Darker nav */
+  --ifm-footer-background-color: var(--ifm-color-secondary-dark); /* Dark footer */
+  --ifm-font-color: #e0e0e0; /* Light text for dark mode */
+  --ifm-heading-color: #ffffff; /* White headings */
+  /* Ensure primary colors are still visible or adjust as needed */
+  --ifm-color-primary: #1b5e20; 
+  --ifm-color-primary-dark: #0a2e10;
+}
+
+/* Hero Section Gradient - applied if .hero class is used */
+.hero {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: var(--ifm-color-white);
+  padding: 60px 0; /* Adjust padding as needed */
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 3rem; /* Example size */
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  font-size: 1.2rem; /* Example size */
+  margin-bottom: 2rem;
+}
+
+/* Typography: Ensuring headings are bold and modern is typically handled by Infima/Docusaurus defaults.
+   If specific overrides are needed, they would go here.
+   Example: h1, h2, h3, h4, h5, h6 { font-weight: 700; /* Bold */ }
+*/
+
+/* Ensure these also use the new palette if they exist and are relevant */
+.pitch-green-text {
+  color: var(--ifm-color-primary);
+}
+
+.pitch-green-bg {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.dark-theme-bg {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color);
 }
