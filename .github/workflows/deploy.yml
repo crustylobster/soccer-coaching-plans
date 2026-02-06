@@ -24,17 +24,18 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: './soccer-coaching-website/package-lock.json'
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build website
-        run: npm run build
+      - name: Install and Build
+        run: |
+          cd soccer-coaching-website
+          npm install
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: ./soccer-coaching-website/build
 
       - name: Deploy to GitHub Pages
         id: deployment
