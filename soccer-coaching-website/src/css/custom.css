@@ -52,10 +52,9 @@
   margin-bottom: 2rem;
 }
 
-/* Typography: Ensuring headings are bold and modern is typically handled by Infima/Docusaurus defaults.
-   If specific overrides are needed, they would go here.
-   Example: h1, h2, h3, h4, h5, h6 { font-weight: 700; /* Bold */ }
-*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
 
 /* Ensure these also use the new palette if they exist and are relevant */
 .pitch-green-text {
