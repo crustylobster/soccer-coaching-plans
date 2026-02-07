@@ -39,12 +39,12 @@ function HomepageHeader() {
   return (
     <header className={'hero hero--primary' /* Applying hero--primary class directly */}>
       <div className="container">
-        <h1 className="hero__title">Elite Session Plans for the Modern Coach</h1>
-        <p className="hero__subtitle">Spend less time planning and more time coaching. Professional drills, tactical breakdowns, and pitch-ready sessions for all age groups.</p>
+        <h1 className="hero__title hero__title--display">Elite Session Plans for the Modern Coach</h1>
+        <p className="hero__subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>Spend less time planning and more time coaching. Professional drills, tactical breakdowns, and pitch-ready sessions for all age groups.</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/browse">
+            to="/library">
             Browse the Library
           </Link>
         </div>
